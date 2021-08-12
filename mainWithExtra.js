@@ -21,6 +21,14 @@ console.log('Loading main.js');
 //     // do something with the json payload
 // })
 
+// shorter version below
+
+// ******************************************************
+// this is client side code
+// **********************************************************8
+
+
+
 fetch("https://randomuser.me/api/?results=3") // ?results=5 - this number represents how many name to process
     .then(function(response){
         // do something with the result
@@ -34,16 +42,30 @@ fetch("https://randomuser.me/api/?results=3") // ?results=5 - this number repres
         processJson(json); // passing the (json) to the addToDom function
 })
 
-// below is the function to toggle the display of the 'address' class on and off
+// *******************************************************************************
+// if you want to do this in 'node'
+// you will need to use axios node library
+// put 'axios' in the place of 'fetch'
+// *********************************************************************************
+
+
+// processJson = function(json){
+//     //console.log(json.results[0].name.first) // prints just one first name
+//     for(let i = 0; i<json.results.length; i++){
+//         console.log(json.results[i].name.first);
+//     }
+// }
+
 function handleSubmit() {
+    //let toggleDisplay = document.getElementsByid("address");
+    //toggleDisplay.getElementsByClassName.color = red;
+
      var toggleDisplay = document.querySelectorAll(".address");
-     console.log(toggleDisplay)
-     for(let i = 0; i < toggleDisplay.length; i++){ // there must be a for loop to turn each individual 'address'
-                                                    // in the node list
-        if (toggleDisplay[i].style.display === "block") {
-             toggleDisplay[i].style.display = "none";
+     for(let i = 0; i < toggleDisplay.length; i++){
+        if (toggleDisplay[i].style.display === "none") {
+             toggleDisplay[i].style.display = "block";
      } else {
-          toggleDisplay[i].style.display = "block";
+          toggleDisplay[i].style.display = "none";
    }
 }
 }
@@ -56,6 +78,7 @@ let newSpan = document.createElement("span");
 let newP = document.createElement("p");
 let newDiv = document.createElement("div");
 let newImg = document.createElement("Img")
+//let addLi = document.getElementById("main-body").getElementsByTagName("ul")[0];
 let theUl = document.getElementById("people-list");
 
 
@@ -82,11 +105,11 @@ let processContact = function(contact){
     let email = contact.email;
     let city = contact.location.city;
     let state = contact.location.state;
-
     //let street = `${contact.location.street.number} ${contact.location.street.name}`;
-    // this is another way to write the line below
     let street = contact.location.street.number + ' ' + contact.location.street.name;
     let picture = contact.picture.thumbnail;
+    
+    
     let newLi = document.createElement("li");
     let newSpan = document.createElement("span");
     let newP = document.createElement("p");
@@ -107,9 +130,44 @@ let processContact = function(contact){
     newLi.appendChild(newP)
     newP.append('Email: ', email)
     newLi.appendChild(newA);
+
     newA.append("Address: ",street ,' , ',city, ' , ',state)
     //newA.classList.add("address")
     newA.setAttribute('class','address')
+
     newLi.appendChild(newHr);
+    
 
 }
+
+
+
+
+// *************************************************************************
+// let newElement = document.createElement('li')
+// newElement.textContent = 'here i there'
+// let list = document.getElementById('people-list')
+// list.appendChild(newElement)
+// or
+// list.insertBefore(newElement,list.firstElementChild)
+// **********************************************************************************
+
+
+    //theName.innerHTML = (firstName + ' ' + lastName) // done with creating a variable and passing it in
+    //document.querySelector('#e-mail').innerHTML = email // done without creating a variable
+    //document.querySelector('.little-pic').src = picture
+    //body.append(firstName,' ',lastName) // append is a little more flexable than appendchild
+
+
+
+// make the request and then move on
+
+// if using node you need to use
+    // axios
+    // use axios instead of fetch
+
+// assignment
+// list of people in address book in the DOM , nimimum info
+// make ul and add people to li
+// make a hover make other information show up, add event listner to li to show additional info
+// look at todo app week 3
