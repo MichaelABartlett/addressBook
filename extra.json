@@ -1,0 +1,66 @@
+{
+    "results": [
+        {
+            "gender": "female",
+            "name": {
+                "title": "Ms",
+                "first": "Judith",
+                "last": "Graham"
+            },
+            "location": {
+                "street": {
+                    "number": 7100,
+                    "name": "Preston Rd"
+                },
+                "city": "Darwin",
+                "state": "Tasmania",
+                "country": "Australia",
+                "postcode": 4723,
+                "coordinates": {
+                    "latitude": "-89.7692",
+                    "longitude": "25.9726"
+                },
+                "timezone": {
+                    "offset": "+11:00",
+                    "description": "Magadan, Solomon Islands, New Caledonia"
+                }
+            },
+            "email": "judith.graham@example.com",
+            "login": {
+                "uuid": "75cfba4a-edbe-4e1e-bfaf-1e465e5b1e46",
+                "username": "whitebutterfly918",
+                "password": "obiwan",
+                "salt": "3Q36e598",
+                "md5": "113cdce89f11f83178823aae529da7ce",
+                "sha1": "6a27d872feddf257a04ea0fe284374b8a01b1d07",
+                "sha256": "3d26101ba4e5d3730be6ec35604fe259b4f49ca9586ba676d330c43592e1134c"
+            },
+            "dob": {
+                "date": "1960-05-21T22:06:42.952Z",
+                "age": 61
+            },
+            "registered": {
+                "date": "2009-05-04T02:32:15.807Z",
+                "age": 12
+            },
+            "phone": "08-3718-2419",
+            "cell": "0409-484-072",
+            "id": {
+                "name": "TFN",
+                "value": "800006174"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/30.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/30.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/30.jpg"
+            },
+            "nat": "AU"
+        }
+    ],
+    "info": {
+        "seed": "1455d70de2cd9e66",
+        "results": 1,
+        "page": 1,
+        "version": "1.3"
+    }
+}
